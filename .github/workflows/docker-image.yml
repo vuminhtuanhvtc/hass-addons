@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - main
-    paths:
-      - gesturesensor/**
+  workflow_dispatch:  # Cho phép chạy workflow thủ công
 
 jobs:
   build:
@@ -33,4 +32,5 @@ jobs:
           context: ./gesturesensor
           file: ./gesturesensor/Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
           tags: ghcr.io/vuminhtuanhvtc/gesturesensor:latest
