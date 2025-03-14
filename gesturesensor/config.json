@@ -2,13 +2,41 @@
   "name": "Gesture Sensor",
   "version": "1.0.0",
   "slug": "gesturesensor",
-  "description": "Nhận diện cử chỉ bằng AI",
-  "url": "https://github.com/vuminhtuanhvtc/hass-addons",
-  "startup": "services",
+  "description": "Add-on nhận diện cử chỉ và gửi dữ liệu qua MQTT",
+  "arch": ["aarch64", "amd64", "armv7"],
+  "startup": "application",
   "boot": "auto",
-  "arch": ["amd64", "armv7", "aarch64"],
-  "map": ["config:rw", "share:rw"],
-  "options": {},
-  "schema": {},
-  "image": "ghcr.io/vuminhtuanhvtc/gesturesensor"
+  "options": {
+    "mqtt_host": "192.168.1.202",
+    "mqtt_port": 1883,
+    "mqtt_user": "test-mqtt",
+    "mqtt_password": "abc",
+    "frigate_host": "192.168.1.11",
+    "frigate_port": 5000,
+    "frigate_cameras": ["camera_phong_khach", "camera_phong_lam_viec"],
+    "gesture_handsize": 9000,
+    "gesture_confidence": 0.75,
+    "gesture_topic": "gestures",
+    "gesture_detect_all_results": true,
+    "gesture_allowed_persons": []
+  },
+  "schema": {
+    "mqtt_host": "str",
+    "mqtt_port": "int",
+    "mqtt_user": "str",
+    "mqtt_password": "password",
+    "frigate_host": "str",
+    "frigate_port": "int",
+    "frigate_cameras": ["str"],
+    "gesture_handsize": "int",
+    "gesture_confidence": "float",
+    "gesture_topic": "str",
+    "gesture_detect_all_results": "bool",
+    "gesture_allowed_persons": ["str"]
+  },
+  "ports": {
+    "5000/tcp": 5000
+  },
+  "image": "ghcr.io/vuminhtuanhvtc/gesturesensor:latest"
 }
+

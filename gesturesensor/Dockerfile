@@ -1,13 +1,15 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base-python:3.12
-FROM $BUILD_FROM
+FROM python:3.12.7
 
-WORKDIR /app
+WORKDIR /code
 
-RUN apk add --no-cache ffmpeg libsm6 libxext6
+# Cài đặt dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
+# Sao chép mã nguồn
 COPY . .
 
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+# Đảm bảo thư mục lưu config tồn tại
+RUN mkdir -p /data
 
-CMD [ "python", "./gesturesensor.py" ]
+CMD ["python", "./gesturesensor.py"]
