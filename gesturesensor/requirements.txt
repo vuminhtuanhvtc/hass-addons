@@ -1,7 +1,7 @@
 mediapipe==0.10.21
 numpy==1.26.4
-opencv-python==4.11.0.86
+opencv-python-headless==4.11.0.86
 paho-mqtt==2.1.0
 PyYAML==6.0.2
 requests==2.32.3
-tensorflow==2.19.0
+tensorflow-cpu==2.19.0
