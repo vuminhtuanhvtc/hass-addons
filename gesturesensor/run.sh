@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-python3 /app/gesturesensor.py
+/app/venv/bin/python /app/gesturesensor.py
