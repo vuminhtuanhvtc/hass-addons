@@ -1,0 +1,14 @@
+{
+  "name": "My Home Assistant Add-ons",
+  "url": "https://github.com/vuminhtuanhvtc/hass-addons",
+  "maintainer": "Tuan Vu <vuminhtuanhvtc@gmail.com>",
+  "addons": [
+    {
+      "name": "Gesture Sensor",
+      "slug": "gesturesensor",
+      "description": "Nhận diện cử chỉ bằng AI",
+      "url": "https://github.com/vuminhtuanhvtc/hass-addons",
+      "version": "1.0.0"
+    }
+  ]
+}

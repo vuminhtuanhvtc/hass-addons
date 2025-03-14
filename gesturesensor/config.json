@@ -1,0 +1,14 @@
+{
+  "name": "Gesture Sensor",
+  "version": "1.0.0",
+  "slug": "gesturesensor",
+  "description": "Nhận diện cử chỉ bằng AI",
+  "url": "https://github.com/vuminhtuanhvtc/hass-addons",
+  "startup": "services",
+  "boot": "auto",
+  "arch": ["amd64", "armv7", "aarch64"],
+  "map": ["config:rw", "share:rw"],
+  "options": {},
+  "schema": {},
+  "image": "ghcr.io/vuminhtuanhvtc/gesturesensor"
+}
