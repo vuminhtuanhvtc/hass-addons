@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-/app/venv/bin/python /app/gesturesensor.py
+/code/venv/bin/python /code/gesturesensor.py
